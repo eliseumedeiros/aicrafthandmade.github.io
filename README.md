@@ -1,2 +1,2 @@
 # aircrafthandmade
-Shopping Site Simulation
+Shopping Site Simulation. Using javascript, bootstrap and jquary.
