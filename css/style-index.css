@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy|Shrikhand');
+a{
+	text-decoration: none;
+	color: gray;
+	padding-bottom: 6px;
+	padding-top: 2px;
+}
+h3{
+	margin-top: 0px;
+	text-align: left;
+}
+
+body{
+    overflow-x: hidden;
+ }
+legend{
+ 	color: gray;
+}
+ul{
+	list-style: none;
+	list-style-type: none;
+	list-style-image: none;
+	list-style-position: outside;
+}
+.desenv{
+    background-color: white;
+    color: rgb(51,77,92);
+    padding-top: 15px;
+}
+.div-cabecalho{
+	color:gray;
+	margin-top: 10px;
+}
+#artesanais{
+	text-align: center;
+}
+#slogan{
+	text-align: left;
+}
+#topo{
+    margin-bottom: 0px;
+    }
+
+#cabecalho{
+	font-family: 'Luckiest Guy', cursive;
+}
+#img-aircraft-cabecalho{
+
+}
+#corpo{
+    background: white;
+}
+.color-white{
+	text-align: center;
+	text-decoration-color: white;
+	color:white;
+}
+.logotype{
+	width: 75%;
+	margin-left: 12%;
+	}
+.bloco-produto{
+	background: #D8BFD8;
+/*	width: 20rem;
+*/
+	height: 32em;
+}
+.bloco-produto.bg2{
+    background: #D8BFD8;
+}
+.navbar-top{
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+ }
+.container-fluid {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	}
+.vitrine{
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.rodape{
+	margin-top: 30px;
+	background-color: black;
+	color: white;
+	width: 105%;
+}

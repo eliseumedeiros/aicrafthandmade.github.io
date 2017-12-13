@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Site de compras de materiais artesanais">
+	<meta name="author" content="Eliseu Medeiros">
+	<title>Aircraft Handmade - Início</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style-index.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+		<!-- setando icons da página -->
+	<link rel="icon" href="rs/icon/icon.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="rs/icon/icon.png" type="image/x-icon" />
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<!-- RESPONSIVIDADA programada para ser compatível com os dois tamanhos de tela: xs(layout de dispositivos muito pequenos); Aba login; Cabeçalho principal; Área de consulta; Produtos da Loja; Desenvolverdor; e algumas áreas do rodapé.  sm (layout de dispositivos maiores, como tablets) 
+nas áreas-->
+<body>
+ <!-- ABA DE LOGIN -->
+ <div class="row">
+    	<div class="col-xs-12 col-sm-12">
+			<nav class="navbar navbar-inverse navbar-top">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#"><h3>Aircraft<small>Handmade</small></h3> </a>
+			    </div>
+
+			    <div class="collapse navbar-collapse" id="myNavbar">
+			       <ul class="nav navbar-nav navbar-right">
+			       	<li id="carrinho-topo">
+			       		<a class="navbar-brand" href="#informacoes-de-compra"><span class="glyphicon glyphicon-shopping-cart"></span><span class="badge" id="qtd-carrinho">0</span><small>CARRINHO |</small> </a>
+			       	</li>
+			        <li id="cadastrar-topo">
+			        	<a href="#" data-toggle="modal" data-target="#register-modal"><span class="glyphicon glyphicon-user"></span> INSCREVER-SE |</a>
+			        </li>
+			        <li id="iniciar-sair-topo">
+			        	<a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> INICIAR SESSÃO </a>
+			        </li>
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+		</div>
+	</div>
+
+	<!-- CABEÇALHO-->
+	<!-- TELA DE LOGIN -->
+	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+	    <div class="modal-dialog">
+		    <div class="loginmodal-container" id="tela-login">
+					<h1>INICIAR SESSÃO</h1><br>
+					<input type="text" id="enter-nome" placeholder="nome" required="true">
+					<button class="btn btn-info btn-lg" onclick="entrar()" value="Entrar"> Entrar </button>
+				    <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Fechar</button>
+				</div>
+				<div id="tela-login-mensagem"></div>
+		    </div>
+	  	</div>
+	 </div><!-- fim tela de login -->
+	 <!-- TELA DE REGISTRO -->
+	<div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+	    <div class="modal-dialog" id="tela-registro">
+		    <div class="loginmodal-container">
+				<h1>INSCREVER-SE</h1><br>
+				<input type="text" id="register-nome" placeholder="nome" required="true">
+				<button class="btn btn-info btn-lg" onclick="registrar()" value="registrar"> Registrar </button>
+			    <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Fechar</button>
+		    </div>
+		    <div id="tela-registro-mensagem"></div>
+	  	</div>
+	 </div><!-- fim tela de login -->
+
+    <!-- SÍMBOLO DO AIRCRAFT- CABEÇALHO PRINCIPAL -->
+    <div class="row">
+    	<div class="col-xs-12 col-sm-12">
+    		<header class="jumbotron text-center" id="cabecalho">
+    			<img src="rs/aircraft-cabecalho-v4.png" id="img-aircraft-cabecalho" class="img-responsive " alt="logotipo Aircraft"/>
+    			<div class="row">
+    				<br/>
+    				<div class="col-xs-10 col-xs-offset-1">
+    				<h3 id="artesanais">POSSUÍMOS AS MELHORES OPÇÕES DE PRODUTOS ARTESANAIS PARA VOCÊ!</h3>
+			      	<h3 class="text-center">Sobre nós:</h3>
+			      	<h4>Somos uma empresa de produtos artesanais focada em proporcionar conforto, segurança e beleza às pessoas através da utilização dos nossos materiais usados como suporte e transporte de outros materias para viagens. Buscamos sempre uma excelente experiência para nossos clientes, que estejam cada vez mais estimulados a consumir os nossos produtos.</h4>
+	    			</div>
+    			</div>
+		    </header>
+    	</div>
+    </div>
+    
+<!-- Área de Consulta -->
+<div class="row">
+	<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1">
+		<h1 class="text-center">Veja as opções incríveis que temos em estoque!</h1>
+		<br/>
+		<h3>Consultar</h3>
+		<input type="text" id="enter-busca" placeholder="buscar"> 
+		<button id="cadastrar" onclick="">consultar</button>
+	</div>
+	<div class="col-xs-2 col-xs-offset-5">
+		<br/>
+		<button name="ver-todos" onclick="produtosCadastrados()" class="btn btn-primary btn-block">TODOS OS PRODUTOS</button>
+	</div>
+	
+</div>
+<!-- PRODUTOS DA LOJA - todos os materiais serão listados nessa div -->
+<div  class="row">
+    	<div class="col-xs-12 col-sm-12">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1" >
+			    <section id="lista-produtos" class="vitrine">
+			      
+			    </section>
+			</div>
+		</div>
+	</div>
+<!-- INFORMAÇÕES DE COMPRA -->
+<div  class="row">
+    	<div class="col-xs-12 col-sm-12">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1" >
+			    <section id="informacoes-de-compra" class="vitrine" >
+			    	<h1 class="text-center">Informações de Compra</h1>
+			    	<table class="table">
+
+			    		<thead>
+			    			<tr>
+				    			<th scope='col'>Informações detalhadas dos produtos comprados</th>
+				    		</tr>
+			    		</thead>
+			    		<tbody>
+			    			<tr>
+			    				<th ><button scope="row" id="valor-total-compra" onclick="listarTotal()" data-toggle="modal" data-target="#resultado-modal">VALOR TOTAL DA COMPRA</button></th>
+			    			</tr>
+			    		</tbody>
+			    	</table>
+
+			    	<!-- TELA DE REGISTRO -->
+					 <div class="modal fade" id="resultado-modal" role="dialog">
+					    <div class="modal-dialog modal-lg">
+					      <div class="modal-content">
+					        <div class="modal-header"> <h1>Informações de Compra</h1></div>
+									<h3>Produtos Selecionados</h3>
+									
+									<div class="modal-body">
+										<div id="produtos-listar"></div>
+								</div>
+
+						      <div class="modal-footer">
+						          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+						        </div>
+						    </div>
+					  	</div>
+					 </div><!-- fim tela de login -->
+			    </section>
+			</div>
+		</div>
+	</div>
+<!-- DESENVOLVEDOR -->
+<!-- DESCREVENDO OS DESENVOLVEDORES -->
+    <section class="text-center row desenv">
+      <h1> Desenvolvedor </h1>
+      <div class=" col-sm-2 col-sm-offset-5">
+
+	          <!-- DESCREVENDO - ELISEU MEDEIROS -->
+	        <div class="col-sm-12">
+	            <div class="thumbnail">
+	            	<img src="rs/img/desenv.jpg" alt="eliseu">
+	        	    <div class="caption">
+		                <h3 class="text-center">Eliseu Medeiros</h3>
+		                <p>Estudante de TI - UFRN</p>
+	               </div>
+	             </div>
+         	</div>
+         </div>
+     </section>
+<div name="rodape" class="rodape">
+<footer class="container-fluid row" id="container-rodape">
+          <!-- SITES DO RODAPÉ -->
+            <div class="container col-md-6">
+              <div class="row col-md-offset-2">
+                <div id="linksImportantes" class="col-md-6">
+                  <h4>Links Importantes</h4>
+                  <ul>
+                    <li><a href="#" data-toggle="modal" data-target="#register-modal">INSCREVER-SE</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#login-modal">INICIAR SESSÃO</a></li>
+                    <li><a href="#">INÍCIO</a></li>
+                  </ul>
+                </div> <!-- Aqui e a area dos links importantes -->
+               </div>
+            </div>
+
+          <div class="row col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <form class="form-horizontal">
+              <fieldset>
+ <!-- FORMULÁRIO PARA PERGUNTAS -->
+              <legend>Fale Conosco</legend>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="textinputName">Nome</label>
+                <div class="col-md-8">
+                <input id="textinputName" name="textinputName" type="text" placeholder="nome" class="form-control input-md">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="textinputEmail">Email</label>
+                <div class="col-md-8">
+                <input id="textinputEmail" name="textinputEmail" type="text" placeholder="email" class="form-control input-md">
+                </div>
+              </div>
+
+              <!-- Textarea -->
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="textareaQuestion">Pergunta</label>
+                <div class="col-md-8">
+                  <textarea class="form-control" id="textareaQuestion" name="textareaQuestion" placeholder="Digite sua dúvida aqui"></textarea>
+                </div>
+              </div>
+
+              <!-- Button -->
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="singlebuttonEnviar"></label>
+                <div class="col-md-4">
+                  <button id="singlebuttonEnviar" name="singlebuttonEnviar" class="btn btn-primary">Enviar</button>
+                </div>
+              </div>
+
+              </fieldset>
+              </form>
+
+          </div>
+<!-- FINAL DO SITE -->
+          <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="rodape">
+            <p>&reg; AIRCRAFT 2017 - Projeto Web I - Eliseu Medeiros</p>
+          </div>
+    </footer>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
